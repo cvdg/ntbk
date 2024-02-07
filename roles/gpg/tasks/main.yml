@@ -1,0 +1,18 @@
+---
+- name: ~/.gnupg
+  file:
+    path: ~/.gnupg
+    state: directory
+    mode: 0700
+
+- name: ~/.gnupg/cees-sec.txt
+  copy:
+    src: cees-sec.txt
+    dest: ~/.gnupg/cees-sec.txt
+    mode: 0600
+
+- name: ~/.gnupg/cees-pub.txt
+  copy:
+    src: cees-pub.txt
+    dest: ~/.gnupg/cees-pub.txt
+    mode: 0600

@@ -2,9 +2,10 @@
 - name: "Playing with Ansible and Git"
   hosts: localhost
   connection: local
-  become: true 
+  become: false
   
   roles:
     - git
+    - gpg
     - ssh
   

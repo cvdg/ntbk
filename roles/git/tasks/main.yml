@@ -1,12 +1,7 @@
 ---
-- name: install git
-  apt:
-    name: git
-
 - name: ~/.gitconfig
   copy:
     src: gitconfig
-    dest: /home/cees/.gitconfig
+    dest: ~/.gitconfig
     mode: 0644
-    owner: cees
   

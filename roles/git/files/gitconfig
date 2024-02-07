@@ -1,6 +1,9 @@
 #
-# This file is maintained with Ansible
+# This file is maintained with Ansible, changes will be overwritten.
 #
 [user]
         email = cees.van.de.griend@protonmail.com
         name = Cees van de Griend
+        signingkey = 11E965F14AB03635
+[commit]
+        gpgsign = true
