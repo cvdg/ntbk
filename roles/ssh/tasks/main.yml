@@ -1,0 +1,25 @@
+---
+- name: install openssh-client
+  apt:
+    name: openssh-client
+
+- name: ~/.ssh
+  file:
+    path: /home/cees/.ssh
+    state: directory
+    owner: cees
+    mode: 0700
+
+- name: ~/.ssh/id_ed25519
+  copy:
+    src: id_ed25519
+    dest: /home/cees/.ssh/id_ed25519
+    mode: 0600
+    owner: cees
+  
+- name: ~/.ssh/id_ed25519.pub
+  copy:
+    src: id_ed25519.pub
+    dest: /home/cees/.ssh/id_ed25519.pub
+    mode: 0644
+    owner: cees

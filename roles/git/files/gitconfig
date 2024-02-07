@@ -1,0 +1,6 @@
+#
+# This file is maintained with Ansible
+#
+[user]
+        email = cees.van.de.griend@protonmail.com
+        name = Cees van de Griend

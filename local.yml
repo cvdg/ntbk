@@ -1,12 +1,10 @@
 ---
 - name: "Playing with Ansible and Git"
   hosts: localhost
-  connection: local 
+  connection: local
+  become: true 
   
-  tasks:
-    - name: "just execute a ls -lrt command"
-      shell: "ls -lh"
-      register: "output"
-
-    - debug: var=output.stdout_lines
+  roles:
+    - git
+    - ssh
   
