@@ -1,0 +1,60 @@
+---
+- name: ~/.config/zsh
+  file:
+    path: ~/.config/zsh
+    state: directory
+    mode: 0755
+
+- name: ~/.zshrc
+  template:
+    src: zshrc.j2
+    dest: ~/.zshrc
+    mode: 0644
+
+- name: S00-dummy.zsh
+  template:
+    src: S00-dummy.j2
+    dest: ~/.config/zsh/S00-dummy.zsh
+    mode: 0644
+
+- name: S10-ssh-agent.zsh
+  template:
+    src: S10-ssh-agent.j2
+    dest: ~/.config/zsh/S10-ssh-agent.zsh
+    mode: 0644
+
+- name: S20-completion.zsh
+  template:
+    src: S20-completion.j2
+    dest: ~/.config/zsh/S20-completion.zsh
+    mode: 0644
+
+- name: S20-history.zsh
+  template:
+    src: S20-history.j2
+    dest: ~/.config/zsh/S20-history.zsh
+    mode: 0644
+
+- name: S40-path.zsh
+  template:
+    src: S40-path.j2
+    dest: ~/.config/zsh/S40-path.zsh
+    mode: 0644
+
+- name: S40-prompt.zsh
+  template:
+    src: S40-prompt.j2
+    dest: ~/.config/zsh/S40-prompt.zsh
+    mode: 0644
+
+- name: S50-proxy.zsh
+  template:
+    src: S50-proxy.j2
+    dest: ~/.config/zsh/S50-proxy.zsh
+    mode: 0644
+
+- name: S50-pyenv.zsh
+  template:
+    src: S50-pyenv.j2
+    dest: ~/.config/zsh/S50-pyenv.zsh
+    mode: 0644

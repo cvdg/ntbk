@@ -1,0 +1,5 @@
+{{ ansible_managed | comment }}
+
+if [ -z ${SSH_AGENT_PID} ] ; then
+  ssh-agent ${SHELL}
+fi

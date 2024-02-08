@@ -1,0 +1,17 @@
+{{ ansible_managed | comment }}
+
+#
+# Setup terminal for GnuPG
+#
+case $(uname -s) in
+    Darwin)
+        if [ -x /usr/local/bin/gpg ] ; then
+            export GPG_TTY=$(tty)
+        fi
+        ;;
+    Linux)
+        if [ -x /usr/bin/gpg ] ; then
+            export GPG_TTY=$(tty)
+        fi
+        ;;
+esac

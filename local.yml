@@ -1,11 +1,21 @@
 ---
-- name: "Playing with Ansible and Git"
-  hosts: localhost
+- hosts: localhost
   connection: local
   become: false
   
   roles:
-    - git
-    - gpg
-    - ssh
-  
+    - role: git
+      tags:
+      - git
+
+    - role: gpg
+      tags:
+      - gpg
+
+    - role: ssh
+      tags:
+      - ssh
+
+    - role: zsh
+      tags:
+      - zsh
