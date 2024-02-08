@@ -47,6 +47,12 @@
     dest: ~/.config/zsh/S40-prompt.zsh
     mode: 0644
 
+- name: S50-gpg.zsh
+  template:
+    src: S50-gpg.j2
+    dest: ~/.config/zsh/S50-gpg.zsh
+    mode: 0644
+
 - name: S50-proxy.zsh
   template:
     src: S50-proxy.j2
