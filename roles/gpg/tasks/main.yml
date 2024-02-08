@@ -5,14 +5,26 @@
     state: directory
     mode: 0700
 
-- name: ~/.gnupg/cees-sec.txt
-  copy:
-    src: cees-sec.txt
-    dest: ~/.gnupg/cees-sec.txt
-    mode: 0600
+- name: gpg check if id exists
+  command: gpg --list-keys "{{ gpg_id }}"
+  register: gpg_exists
+  ignore_errors: true
+  changed_when: false
 
-- name: ~/.gnupg/cees-pub.txt
+- name: "~/.gnupg/{{ gpg_id }}-secret.txt"
   copy:
-    src: cees-pub.txt
-    dest: ~/.gnupg/cees-pub.txt
+    src: "{{ gpg_id }}-secret.txt"
+    dest: "~/.gnupg/{{ gpg_id }}-secret.txt"
     mode: 0600
+  when: gpg_exists.rc == 2
+
+- name: gpg --import "{{ gpg_id }}-secret.txt"
+  command: gpg --batch --passphrase "{{ gpg_passphrase }}" --import "~/.gnupg/{{ gpg_id }}-secret.txt"
+  register: gpg_import
+  when: gpg_exists.rc == 2
+
+- name: delete "{{ gpg_id }}-secret.txt"
+  file: 
+    path: "~/.gnupg/{{ gpg_id }}-secret.txt"
+    state: absent
+  when: gpg_exists.rc == 2 and gpg_import.rc == 0
