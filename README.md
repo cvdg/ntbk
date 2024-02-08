@@ -22,5 +22,5 @@ _N.B. Vault password is in `Bitwarden`._
 ## Ansible pull
 
 ```shell
-$ ansible-pull --ask-become-pass --url https://github.com/cvdg/ntbk.git
+$ ansible-pull --url https://github.com/cvdg/ntbk.git
 ```
