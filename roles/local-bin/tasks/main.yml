@@ -1,0 +1,12 @@
+---
+- name: ~/.local/bin
+  file:
+    path: ~/.local/bin
+    state: directory
+    mode: 0755
+
+- name: ntbk-pull
+  copy:
+    src: ntbk-pull
+    dest: ~/.local/bin/ntbk-pull
+    mode: 0755

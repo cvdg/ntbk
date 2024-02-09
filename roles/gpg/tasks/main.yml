@@ -24,7 +24,7 @@
   when: gpg_exists.rc == 2
 
 - name: delete "{{ gpg_id }}-secret.txt"
-  file: 
+  file:
     path: "~/.gnupg/{{ gpg_id }}-secret.txt"
     state: absent
   when: gpg_exists.rc == 2 and gpg_import.rc == 0

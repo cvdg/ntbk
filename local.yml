@@ -2,20 +2,24 @@
 - hosts: localhost
   connection: local
   become: false
-  
+
   roles:
     - role: git
       tags:
-      - git
+        - git
 
     - role: gpg
       tags:
-      - gpg
+        - gpg
+
+    - role: local-bin
+      tags:
+        - local-bin
 
     - role: ssh
       tags:
-      - ssh
+        - ssh
 
     - role: zsh
       tags:
-      - zsh
+        - zsh
