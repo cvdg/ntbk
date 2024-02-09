@@ -47,6 +47,18 @@
     dest: ~/.config/zsh/S40-prompt.zsh
     mode: 0644
 
+- name: S45-starship.zsh
+  template:
+    src: S45-starship.j2
+    dest: ~/.config/zsh/S45-starship.zsh
+    mode: 0644
+
+- name: S45-cargo.zsh
+  template:
+    src: S45-pcargo.j2
+    dest: ~/.config/zsh/S45-cargo.zsh
+    mode: 0644
+
 - name: S50-editor.zsh
   template:
     src: S50-editor.j2

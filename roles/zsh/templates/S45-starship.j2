@@ -1,9 +1,17 @@
 {{ ansible_managed | comment }}
 
+#
+# curl -sS https://starship.rs/install.sh | sh
+#
 case $(uname -s) in
     Darwin)
         if [ -x /usr/local/bin/starship ] ; then
-		eval "$(/usr/local/bin/starship init zsh)"
+		    eval "$(/usr/local/bin/starship init zsh)"
+        fi
+        ;;
+    Linux)
+        if [ -x /usr/local/bin/starship ] ; then
+		    eval "$(/usr/local/bin/starship init zsh)"
         fi
         ;;
 esac
