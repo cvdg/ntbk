@@ -55,7 +55,7 @@
 
 - name: S45-cargo.zsh
   template:
-    src: S45-pcargo.j2
+    src: S45-cargo.j2
     dest: ~/.config/zsh/S45-cargo.zsh
     mode: 0644
 
