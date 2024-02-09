@@ -1,0 +1,13 @@
+{{ ansible_managed | comment }}
+
+case $(uname -s) in
+    Linux)
+        if [ -x /usr/bin/nvim ] ; then
+            export EDITOR=/usr/bin/nvim
+        elif [ -x /usr/bin/vim ] ; then
+            export EDITOR=/usr/bin/vim
+        elif [ -x /usr/bin/vi ] ; then
+            export EDITOR=/usr/bin/vi
+        fi
+        ;;
+esac

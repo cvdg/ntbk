@@ -4,14 +4,13 @@ Installs and configure the `.dotfiles` for:
 
 - git
 - gpg
-- .local/bin
 - ssh
 - zsh
 
 ## Install
 
 ```shell
-$ sudo apt install ssh-client git gnupg2 python3 ansible
+$ sudo apt install ansible git ssh-client 
 ```
 
 ## Ansible vault password
@@ -28,3 +27,13 @@ _N.B. Vault password is in `Bitwarden`._
 ```shell
 $ ansible-pull --url https://github.com/cvdg/ntbk.git
 ```
+
+
+##
+
+Afterwards:
+
+- edit gpg trust `gpg --edit-key cees trust` to ultimate (ToDo)
+- install `zsh` as primary shell
+- install `tmux`
+- install `neovim`

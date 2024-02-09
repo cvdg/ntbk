@@ -47,6 +47,12 @@
     dest: ~/.config/zsh/S40-prompt.zsh
     mode: 0644
 
+- name: S50-editor.zsh
+  template:
+    src: S50-editor.j2
+    dest: ~/.config/zsh/S50-editor.zsh
+    mode: 0644
+
 - name: S50-gpg.zsh
   template:
     src: S50-gpg.j2
