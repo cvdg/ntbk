@@ -1,7 +1,7 @@
 ---
 - name: ~/.ssh
   file:
-    path: /home/cees/.ssh
+    path: ~/.ssh
     state: directory
     mode: 0700
 

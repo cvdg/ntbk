@@ -7,11 +7,13 @@ Installs and configure the `.dotfiles` for:
 - ssh
 - zsh
 
+
 ## Install
 
 ```shell
 $ sudo apt install ansible git ssh-client 
 ```
+
 
 ## Ansible vault password
 
@@ -21,6 +23,7 @@ $ echo ${NTBK_VAULT_PASSWORD} > ~/.config/ntbk/ansible-vault
 ```
 
 _N.B. Vault password is in `Bitwarden`._
+
 
 ## Ansible pull
 
