@@ -5,6 +5,12 @@
     state: directory
     mode: 0700
 
+- name: ~/.ssh/master-socket
+  file:
+    path: ~/.ssh/master-socket
+    state: directory
+    mode: 0700
+
 - name: ~/.ssh/id_ed25519
   copy:
     src: id_ed25519
@@ -15,4 +21,10 @@
   copy:
     src: id_ed25519.pub
     dest: ~/.ssh/id_ed25519.pub
+    mode: 0644
+
+- name: ~/.ssh/config
+  template:
+    src: config.j2
+    dest: ~/.ssh/config
     mode: 0644

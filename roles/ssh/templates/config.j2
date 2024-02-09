@@ -1,0 +1,13 @@
+{{ ansible_managed | comment }}
+
+ForwardAgent           yes
+AddKeysToAgent         yes
+StrictHostKeyChecking  no
+
+ControlMaster          auto
+ControlPath            ~/.ssh/master-socket/%r@%h:%p
+ControlPersist         30s
+
+Host srv00
+    Hostname           192.168.129.64
+
