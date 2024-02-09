@@ -1,0 +1,10 @@
+---
+ntbk_packages:
+  - ansible
+  - git
+  - ssh-client
+
+  - gnupg2
+  - neovim
+  - tmux
+  - zsh

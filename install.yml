@@ -1,0 +1,9 @@
+---
+- hosts: all
+  connection: local
+  become: true
+
+  tasks:
+  - apt:
+      name: "{{ ntbk_packages }}"
+      state: present
