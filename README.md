@@ -1,5 +1,13 @@
 # ntbk / notebook - configure debian desktop with Ansible
 
+Installs and configure the `.dotfiles` for:
+
+- git
+- gpg
+- .local/bin
+- ssh
+- zsh
+
 ## Install
 
 ```shell

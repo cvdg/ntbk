@@ -1,5 +1,11 @@
 {{ ansible_managed | comment }}
 
-if [ -z ${SSH_AGENT_PID} ] ; then
-  ssh-agent ${SHELL}
+#
+# Ensure ssh-agent is running
+#
+if [ ! -S ~/.ssh/ssh_auth_sock ] ; then
+   eval $(ssh-agent -s)
+   ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
 fi
+
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
