@@ -5,80 +5,108 @@
     state: directory
     mode: 0755
 
+
+
+- name: ~/.zshenv
+  template:
+    src: zshenv.j2
+    dest: ~/.zshenv
+    mode: 0644
+
+- name: ~/.zprofile
+  template:
+    src: zprofile.j2
+    dest: ~/.zprofile
+    mode: 0644
+
 - name: ~/.zshrc
   template:
     src: zshrc.j2
     dest: ~/.zshrc
     mode: 0644
 
+- name: ~/.zlogin
+  template:
+    src: zlogin.j2
+    dest: ~/.zlogin
+    mode: 0644
+
+- name: ~/.zlogout
+  template:
+    src: zlogout.j2
+    dest: ~/.zlogout
+    mode: 0644
+
+
+
 - name: S00-dummy.zsh
   template:
-    src: S00-dummy.j2
+    src: S00-dummy.zsh.j2
     dest: ~/.config/zsh/S00-dummy.zsh
     mode: 0644
 
 - name: S10-ssh-agent.zsh
   template:
-    src: S10-ssh-agent.j2
+    src: S10-ssh-agent.zsh.j2
     dest: ~/.config/zsh/S10-ssh-agent.zsh
     mode: 0644
 
 - name: S20-completion.zsh
   template:
-    src: S20-completion.j2
+    src: S20-completion.zsh.j2
     dest: ~/.config/zsh/S20-completion.zsh
     mode: 0644
 
 - name: S20-history.zsh
   template:
-    src: S20-history.j2
+    src: S20-history.zsh.j2
     dest: ~/.config/zsh/S20-history.zsh
     mode: 0644
 
 - name: S40-path.zsh
   template:
-    src: S40-path.j2
+    src: S40-path.zsh.j2
     dest: ~/.config/zsh/S40-path.zsh
     mode: 0644
 
 - name: S40-prompt.zsh
   template:
-    src: S40-prompt.j2
+    src: S40-prompt.zsh.j2
     dest: ~/.config/zsh/S40-prompt.zsh
     mode: 0644
 
 - name: S45-starship.zsh
   template:
-    src: S45-starship.j2
+    src: S45-starship.zsh.j2
     dest: ~/.config/zsh/S45-starship.zsh
     mode: 0644
 
 - name: S45-cargo.zsh
   template:
-    src: S45-cargo.j2
+    src: S45-cargo.zsh.j2
     dest: ~/.config/zsh/S45-cargo.zsh
     mode: 0644
 
 - name: S50-editor.zsh
   template:
-    src: S50-editor.j2
+    src: S50-editor.zsh.j2
     dest: ~/.config/zsh/S50-editor.zsh
     mode: 0644
 
 - name: S50-gpg.zsh
   template:
-    src: S50-gpg.j2
+    src: S50-gpg.zsh.j2
     dest: ~/.config/zsh/S50-gpg.zsh
     mode: 0644
 
 - name: S50-proxy.zsh
   template:
-    src: S50-proxy.j2
+    src: S50-proxy.zsh.j2
     dest: ~/.config/zsh/S50-proxy.zsh
     mode: 0644
 
 - name: S50-pyenv.zsh
   template:
-    src: S50-pyenv.j2
+    src: S50-pyenv.zsh.j2
     dest: ~/.config/zsh/S50-pyenv.zsh
     mode: 0644
