@@ -24,6 +24,10 @@
       tags:
         - ssh
 
+    - role: tmux
+      tags:
+        - tmux
+
     - role: zsh
       tags:
         - zsh
