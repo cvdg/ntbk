@@ -1,12 +1,90 @@
 ---
+- include_tasks: install.yml
+
 - name: ~/.config/nvim
   file:
     path: ~/.config/nvim
     state: directory
-    mode: 0700
+    mode: 0755
 
 - name: init.vim
+  file:
+    path: ~/.config/nvim/init.vim
+    state: absent
+
+#
+# Install LazyVim/Starter
+#
+# See: https://www.lazyvim.org/installation
+#
+- name: ~/.config/nvim/lua
+  file:
+    path: ~/.config/nvim/lua
+    state: directory
+    mode: 0755
+
+- name: ~/.config/nvim/lua/config
+  file:
+    path: ~/.config/nvim/lua/config
+    state: directory
+    mode: 0755
+
+- name: ~/.config/nvim/lua/plugins
+  file:
+    path: ~/.config/nvim/plugins
+    state: directory
+    mode: 0755
+
+
+
+- name: ~/.config/nvim/init.lua
   template:
-    src: init.vim.j2
-    dest: ~/.config/nvim/init.vin
+    src: init.lua.j2
+    dest: ~/.config/nvim/init.lua
+    mode: 0644
+
+- name: ~/.config/nvim/.neoconf.json
+  template:
+    src: .neoconf.json.j2
+    dest: ~/.config/nvim/.neoconf.json
+    mode: 0644
+
+- name: ~/.config/nvim/stylua.toml
+  template:
+    src: stylua.toml.j2
+    dest: ~/.config/nvim/stylua.toml
+    mode: 0644
+
+
+
+- name: ~/.config/nvim/lua/config/autocmds.lua
+  template:
+    src: lua/config/autocmds.lua.j2
+    dest: ~/.config/nvim/lua/config/autocmds.lua
+    mode: 0644
+
+- name: ~/.config/nvim/lua/config/keymaps.lua
+  template:
+    src: lua/config/keymaps.lua.j2
+    dest: ~/.config/nvim/lua/config/keymaps.lua
+    mode: 0644
+
+- name: ~/.config/nvim/lua/config/lazy.lua
+  template:
+    src: lua/config/lazy.lua.j2
+    dest: ~/.config/nvim/lua/config/lazy.lua
+    mode: 0644
+
+- name: ~/.config/nvim/lua/config/options.lua
+  template:
+    src: lua/config/options.lua.j2
+    dest: ~/.config/nvim/lua/config/options.lua
+    mode: 0644
+
+
+
+- name: ~/.config/nvim/lua/plugins/example.lua
+  template:
+    src: lua/plugins/example.lua.j2
+    dest: ~/.config/nvim/lua/plugins/example.lua
     mode: 0644

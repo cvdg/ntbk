@@ -1,0 +1,24 @@
+---
+- name: ~/.local/download
+  file:
+    path: ~/.local/download
+    state: directory
+    mode: 0755
+
+- name: ~/.local/opt/nvim
+  file:
+    path: ~/.local/opt/nvim
+    state: directory
+    mode: 0755
+
+- name: download nvim
+  get_url:
+    url: https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+    dest: ~/.local/download/nvim-linux64.tar.gz
+    mode: '0440'
+
+- name: extract nvim
+  unarchive:
+    src: ~/.local/download/nvim-linux64.tar.gz
+    dest: ~/.local/opt/nvim/
+  

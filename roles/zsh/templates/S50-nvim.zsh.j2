@@ -1,0 +1,9 @@
+{{ ansible_managed | comment }}
+
+case $(uname -s) in
+    Linux)
+        if [ -d ~/.local/opt/nvim/nvim-linux64/bin ] ; then
+            export path=(~/.local/opt/nvim/nvim-linux64/bin ${path})
+        fi
+        ;;
+esac
