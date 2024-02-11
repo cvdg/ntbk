@@ -31,7 +31,7 @@
 
 - name: ~/.config/nvim/lua/plugins
   file:
-    path: ~/.config/nvim/plugins
+    path: ~/.config/nvim/lua/plugins
     state: directory
     mode: 0755
 
