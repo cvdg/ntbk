@@ -4,7 +4,9 @@ Installs and configure the `.dotfiles` for:
 
 - git
 - gpg
+- nvim
 - ssh
+- tmux
 - zsh
 
 
@@ -39,4 +41,6 @@ $ ansible-pull --ask-become-password --url https://github.com/cvdg/ntbk.git inst
 ```
 
 - edit gpg trust `gpg --edit-key cees trust` to ultimate (ToDo)
-- install `zsh` as primary shell
+- install `zsh` as primary shell: `chsh -s /usr/bin/zsh`
+
+The `nvim` version in Debian stable (Bookworm) is very old and does not work with `LazyVim`.
